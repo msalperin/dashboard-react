@@ -30,6 +30,18 @@ h2{
   color: blue;
 }
 
+.dashboard-container{
+  width: 100%;
+  background-color: blueviolet;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.tarjetas-container{
+  width: 100%;
+}
+
 
 .App {
   text-align: left;

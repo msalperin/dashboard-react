@@ -1,10 +1,13 @@
 
 import './App.css';
-import Saludo from './components/Saludo';
+
+
 import Header from './components/Header';
+import DashboardContainer from './components/DashboardContainer';
 
 
 function App() {
+
   return (
 
     <div className="dashboard">
@@ -12,7 +15,9 @@ function App() {
       <Header></Header>
 
       <body>
-        <Saludo></Saludo>
+        
+        <DashboardContainer></DashboardContainer>
+
       </body>
     
     </div>
