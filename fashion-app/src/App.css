@@ -22,8 +22,59 @@
   margin-top: 15px;
 }
 
+.productos-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.tablaProductos-container{
+  width: 50%;
+  background-color: honeydew;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  
+}
+
+.ultimoProducto-container{
+  width: 50%;
+  background-color: silver;
+}
+
+.tablaProductos{
+  width: 80%;
+  background-color: gray;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+}
+
+.tarjetas-tablaProducto{
+  width: 40%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: aquamarine; 
+  border: 1px solid salmon;
+}
+
+
 h1{
   color: black;
+}
+
+.titulo-centrado{
+  margin:auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding: 5px;
 }
 
 h2{
