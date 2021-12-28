@@ -32,7 +32,6 @@ h2{
 
 .dashboard-container{
   width: 100%;
-  background-color: blueviolet;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -40,6 +39,26 @@ h2{
 
 .tarjetas-container{
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: white;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.tarjeta{
+  
+  width: 35%;
+  margin: auto;
+  background-color: grey;   
+  border-left: 10px solid violet;
+
+}
+
+.tarjeta-contenido{
+  padding: 10px;
+  line-height: 5px;
 }
 
 

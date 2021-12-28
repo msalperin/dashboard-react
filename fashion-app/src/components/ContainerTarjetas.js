@@ -1,16 +1,36 @@
+
 import React from "react";
 import Tarjeta from "./Tarjetas";
+
+let productosInDB = {
+    title: 'Productos en Base de Datos',
+    color: 'primary', 
+    cuantity: 21,
+    icon: 'fas fa-clipboard-list'
+}
+
+let clientesInDb = {
+    title: 'Clientes en Base de Datos', 
+    color:'success', 
+    cuantity: '79',
+    icon:'fas fa-user-check'
+}
+
+let tarjetasProps = [productosInDB,clientesInDb]
 
 function ContainerTarjetas(){
 
     return (
 
         <div className="tarjetas-container">
-           
-             <h1>Hola</h1>
 
-             <div><Tarjeta></Tarjeta></div>
-                 
+               {tarjetasProps.map( (product, i) => {
+
+               return <Tarjeta {...product} key={i}/>
+
+          })}
+           
+                             
         </div>
     )
 
