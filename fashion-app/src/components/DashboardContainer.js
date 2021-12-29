@@ -1,6 +1,7 @@
 import React from "react";
 import ContainerTarjetas from "./ContainerTarjetas";
 import ContainerProductos from "./ContainerProductos";
+import ContainerClientes from "./ContainerClientes";
 
 
 function DashboardContainer(){
@@ -11,6 +12,7 @@ function DashboardContainer(){
 
             <ContainerTarjetas></ContainerTarjetas>
             <ContainerProductos></ContainerProductos>
+            <ContainerClientes></ContainerClientes>
 
         </div>
 

@@ -2,7 +2,6 @@ import React from "react";
 import Productos from "./Productos";
 
 
-
 let productosTotal = ["Aros de Plata", "Anillo", "Cadena", "Collar"]
 
 function TablaProductos(){
