@@ -13,27 +13,32 @@ class ContainerTarjetas extends React.Component{
     }
 
     componentDidMount(){
-        let cantUsuarios = fetch('http://localhost:4000/api/users')      
-        .then(respuesta => {return respuesta.json()})
-        Promise.all([cantUsuarios])
-        .then(([cantUsuarios]) => {
+        console.log('Se monto')
+        let cantUsuarios = fetch('/api/users')
+        let cantProducts = fetch('http://localhost:4000/api/products')
+        .then(respuesta => respuesta.json())
+        console.log(cantProducts)
+        Promise.all([cantUsuarios, cantProducts])          
+        .then(([cantUsuarios, cantProducts]) => {
             this.setState ({usersTotal: cantUsuarios.total})
-
+            this.setState ({productsTotal: cantProducts.total})
         })
+
     }
+    
 
     render (){
 
         let valor;
 
-        if(this.state.usersTotal === ''){
+        if(this.state.usersTotal === ' '){
            valor = <p>Cargando</p>
         } else {
 
             let productosInDB = {
                 title: 'Productos en Base de Datos',
                 color: 'primary', 
-                cuantity: 21,
+                cuantity: this.state.productsTotal,
                 icon: 'fas fa-clipboard-list'
             }
             
@@ -64,8 +69,8 @@ class ContainerTarjetas extends React.Component{
         </div>
       
     )
-
-}
+    }
+    
 }
 
 
