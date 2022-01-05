@@ -1,7 +1,6 @@
 import React from "react";
 import Tarjeta from "./Tarjetas";
 
-
 class ContainerTarjetas extends React.Component{
     
     constructor(){
@@ -14,14 +13,14 @@ class ContainerTarjetas extends React.Component{
 
     componentDidMount(){
         console.log('Se monto')
-        let cantUsuarios = fetch('/api/users')
-        let cantProducts = fetch('http://localhost:4000/api/products')
-        .then(respuesta => respuesta.json())
-        console.log(cantProducts)
-        Promise.all([cantUsuarios, cantProducts])          
-        .then(([cantUsuarios, cantProducts]) => {
+        let cantUsuarios = fetch("api/users").then(respuesta => {return respuesta.json()}) 
+    /*     let cantProducts = fetch('http://localhost:4000/api/products') */
+      
+        Promise.all([cantUsuarios])          
+        .then(([cantUsuarios]) => {
+            console.log(cantUsuarios)
             this.setState ({usersTotal: cantUsuarios.total})
-            this.setState ({productsTotal: cantProducts.total})
+   /*          this.setState ({productsTotal: cantProducts.total}) */
         })
 
     }
@@ -38,7 +37,7 @@ class ContainerTarjetas extends React.Component{
             let productosInDB = {
                 title: 'Productos en Base de Datos',
                 color: 'primary', 
-                cuantity: this.state.productsTotal,
+                cuantity: 21,
                 icon: 'fas fa-clipboard-list'
             }
             

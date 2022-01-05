@@ -1,26 +1,22 @@
 import React from "react";
 import CeldasTabla from "./CeldasTabla";
-
-let tableRowsData = [
-    
-    {
-        Id: '1',
-        Nombre: 'Jose',
-        Apellido: 'Perez',
-        Mail: 'joseperez@hotmail.com',
-       
-    },
-    {
-        Id: '2',
-        Nombre: 'Juan',
-        Apellido: 'Gonzalez',
-        Mail: 'juangonzalez@hotmail.com',
-    },
-    
-]
+import { useState, useEffect } from "react";
 
 
 function TablaClientes(){
+
+    const[usuarios, setUsuarios] = useState([]);
+    
+    useEffect(() => {
+        console.log('Se monto')
+        fetch('http://localhost:4000/api/users')
+          .then(response => response.json())
+          .then(result => {
+              setUsuarios(result.data)
+          })
+          .catch(error => console.log(error))
+    }, [])
+
 
     return (
 
@@ -39,7 +35,7 @@ function TablaClientes(){
                         <th>Email</th>
                     </tr>
                     
-                         {tableRowsData.map( ( row , i) => {
+                         {usuarios.map( ( row , i) => {
                                 return <CeldasTabla { ...row} key={i}/>
                         })
                         }   

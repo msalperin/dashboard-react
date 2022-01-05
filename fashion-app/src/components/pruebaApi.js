@@ -1,47 +1,52 @@
 import React from "react";
-import Tarjeta from "./Tarjetas";
+import { useState, useEffect } from "react";
 
+function Rick(){
 
-class PruebaApi extends React.Component{
+    const[usuarios, setUsuarios] = useState([]);
     
-    constructor(){
-        super()
-        this.state = {
-            users: "",
-     
-        }
-    }
-
-    componentDidMount(){
+    useEffect(() => {
         console.log('Se monto')
-         fetch('https://rickandmortyapi.com/api/character')      
-        .then(respuesta => respuesta.json())
-        .then(data => {
-            this.setState({
-               users: data.results
-            })
-        })
-
-    }
-    
-
-    render (){
-
-      return (
-          <div>
-              <h2>Productos</h2>
-              <ul>
-                  {this.state.users.map((user,i) => 
-                    <li key={i}>
-                        <h4>{user.name}</h4>
-                    </li>
-                  )}
-              </ul>
-          </div>
-      )
-    }
-    
-}
-
-
-export default PruebaApi;
+        fetch('http://localhost:4000/api/users')
+          .then(response => response.json())
+          .then(result => {
+              setUsuarios(result.data)
+              console.log(setUsuarios)
+          })
+          .catch(error => console.log(error))
+    }, [])
+  
+    return(
+  
+         <div>
+               
+            
+          <ul>
+              
+               {usuarios.length === 0 && <p>Cargando</p>}
+      
+               {usuarios.map((usuario,i) => {
+                  return <li key={i}>
+                      <h3>{usuario.first_name}</h3>
+                      <h3>{usuario.email}</h3>
+                      </li>
+                })}
+  
+          </ul>
+  
+          
+             {/*  {usuarios.length === 0 && <p>Cargando</p>}
+        
+              {usuarios.map((usuario,i) => {
+                  return <li key={i}>
+                      <h3>{usuario.first_name}</h3>
+                      </li>
+                })} */}
+          
+          
+        </div>
+    )
+  
+  }
+  
+  export default Rick

@@ -5,10 +5,10 @@ function CeldasTabla(props){
 
     return (
                 <tr>
-                    <td>{props.Id}</td>
-                    <td>{props.Nombre}</td>
-                    <td>{props.Apellido}</td>
-                    <td>{props.Mail}</td>
+                    <td>{props.id}</td>
+                    <td>{props.first_name}</td>
+                    <td>{props.last_name}</td>
+                    <td>{props.email}</td>
                 </tr>
             )
     }
