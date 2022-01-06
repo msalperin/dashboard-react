@@ -1,14 +1,13 @@
 import React from "react";
 
 
-
 function Productos(props){
 
     return (
 
         <div className="tarjetas-tablaProducto">
 
-            <h1>Producto</h1>
+            <h1>{props.name}</h1>
 
         </div>
     

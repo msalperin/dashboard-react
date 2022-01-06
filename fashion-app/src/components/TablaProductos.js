@@ -1,10 +1,23 @@
 import React from "react";
 import Productos from "./Productos";
+import { useState, useEffect } from "react";
 
-
-let productosTotal = ["Aros de Plata", "Anillo", "Cadena", "Collar"]
 
 function TablaProductos(){
+
+    const[productos, setProductos] = useState([]);
+    
+    useEffect(() => {
+        console.log('Se monto')
+        fetch('http://localhost:4000/api/products')
+          .then(response => response.json())
+          .then(result => {
+              setProductos(result.data)
+          })
+          .catch(error => console.log(error))
+    }, [])
+
+
 
     return (
 
@@ -14,7 +27,7 @@ function TablaProductos(){
 
            <div className="tablaProductos">
 
-                {productosTotal.map( (product, i) => {
+                {productos.map( (product, i) => {
 
                    return <Productos {...product} key={i}/>
     
