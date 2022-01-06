@@ -1,7 +1,16 @@
+body{
+  font-family: 'Manrope','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-style: normal;
+  
+}
+
+a{
+  text-decoration: none;
+}
 
 .header-container{
   width: 100%;
-  background-color: burlywood;
+  background-color: #F8E6E3;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -31,7 +40,7 @@
 
 .tablaProductos-container{
   width: 50%;
-  background-color: honeydew;
+  background-color: #F8E6E3;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -40,29 +49,34 @@
 
 .ultimoProducto-container{
   width: 50%;
-  background-color: silver;
+  background-color: #F8E6E3;
 }
 
 .tablaProductos{
+ 
   width: 80%;
-  background-color: gray;
+  background-color: #F8E6E3;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  
 
 }
 
 .tarjetas-tablaProducto{
+ 
   width: 40%;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 13px;
+  margin-bottom: 13px;
   padding: 5px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  background-color: aquamarine; 
-  border: 1px solid salmon;
+  background-color: white; 
+  font-size: 12px;
+  
 }
 
 
@@ -103,7 +117,7 @@ h2{
   
   width: 35%;
   margin: auto;
-  background-color: grey;   
+  background-color: #F8E6E3;   
   border-left: 10px solid violet;
 
 }

@@ -7,7 +7,7 @@ function Productos(props){
 
         <div className="tarjetas-tablaProducto">
 
-            <h1>{props.name}</h1>
+              <a href={props.detailUrl}><h1>{props.name}</h1></a>
 
         </div>
     
